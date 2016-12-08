@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 8, 2016 11:26:25 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="org.bildit.model.user.User" table="USERS">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" unique="true"/>
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="email" type="java.lang.String" >
+            <column name="EMAIL" unique="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

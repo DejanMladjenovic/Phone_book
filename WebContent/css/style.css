@@ -1,0 +1,84 @@
+body {
+	background: lightgrey;
+	background-image: url("../images/background.jpg");
+}
+
+.jumbotron {
+	 background: grey; 
+	 background: radial-gradient(black, lightgrey, black);
+	 margin-bottom: 0px;
+	 margin-top: 15px;
+	 box-shadow: 0px 0px 40px 20px  brown;
+}
+
+h1 {
+	font-size: 80px;
+	font-family: 'Bungee Shade', TimesNewRoman;
+}
+
+#welcome {
+	float: left;
+}
+
+.menu {
+	margin-top: -35px;
+	text-align: right;
+}
+
+.menu a{
+	background: radial-gradient(blue, inactivecaptiontext, blue);
+}
+
+.menu a:hover {
+	background: blue;
+}
+
+.menu #logout {
+	background: radial-gradient(red, purple, red);
+	text-align: left;
+}
+
+.main {
+	background-color: grey;
+	margin-top: 70px;
+	font-family: ;
+	font-size: 18px;
+	background: linear-gradient(grey, brown, grey);
+}
+
+h3 {
+	font-family: 'Lobster';
+}
+
+.footer {
+	height: 50px; 
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-style: oblique; 
+}
+
+.footer span {
+	font-family: 'Lobster';
+}
+
+.login-form, .add-form {
+	background-color: lightgrey;
+	width: 400px;
+	font-size: 16px;
+	margin-top: 30px;
+	margin: 30px auto;
+	padding: 30px;
+	box-shadow: 0px 0px 40px 20px brown;
+}
+
+#match {
+	box-shadow: 0px 0px 40px 20px  brown;
+}
+
+.search {
+	width: 50%;
+	min-width: 300px;
+	margin: 100px auto;
+}
