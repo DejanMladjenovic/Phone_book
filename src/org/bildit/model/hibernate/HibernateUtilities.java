@@ -2,23 +2,18 @@ package org.bildit.model.hibernate;
 
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
 
 public class HibernateUtilities {
 
 	private static SessionFactory sessionFactory;
-	private static StandardServiceRegistry serviceRegistry;
 	
 	static {
 		try {
-			Configuration configuration = new Configuration().configure();
-			sessionFactory = configuration.buildSessionFactory();
-			
-			serviceRegistry = 
-					new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+			sessionFactory = new MetadataSources(
+					new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build()).buildMetadata()
+							.buildSessionFactory();
 		} catch (HibernateException he) {
 			System.out.println("Problem creating session factory!");
 			he.printStackTrace();

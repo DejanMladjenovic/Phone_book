@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>addContact</title>
+<title>updateContact</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Lobster|Roboto&effect=fire|outline|fire-animation" rel="stylesheet">
@@ -20,40 +20,39 @@
 
 		<div class="add-form text-center">
 			<c:out value="${screen}" />
-			<h3>New contact!</h3>
-			<form action="AddContactServlet" method="post">
+			<h3>Update contact!</h3>
+			<form action="UpdateServlet" method="post">
 				<div class="form-group">
 					<label for="firstName">First Name</label> <input
-						type="text" class="form-control" name="firstName"
-						placeholder="First name" autofocus="autofocus">
+						type="text" class="form-control" name="firstName" value="${contact.firstName}"
+						autofocus="autofocus">
 				</div>
 				<div class="form-group">
 					<label for="lastname">Last name</label> <input
 						type="text" class="form-control" name="lastName"
-						placeholder="Last name">
+						value="${contact.lastName}">
 				</div>
 				<div class="form-group">
 					<label for="address">Address</label> <input
 						type="text" class="form-control" name="address"
-						placeholder="Address">
+						value="${contact.address}">
 				</div>
 				<div class="form-group">
 					<label for="number">Phone number</label> <input
 						type="text" class="form-control" name="phoneNumber"
-						placeholder="Phone number">
+						value="${contact.phoneNumber}">
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label> <input
 						type="email" class="form-control" name="email"
-						placeholder="Email">
+						value="${contact.email}">
 				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" name="submit" value="${contact.id}" class="btn btn-default">Submit</button>
+				<button type="submit" name="submit" value="cancel" class="btn btn-default">Cancel</button>
 			</form>
 		</div>
-		
 	</div>
 	<jsp:include page="includes/footer.jsp"></jsp:include>
-	
 	
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

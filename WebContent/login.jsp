@@ -24,7 +24,7 @@
 				<div class="form-group">
 					<label for="username">Username</label> <input
 						type="text" class="form-control" name="username"
-						placeholder="Username">
+						placeholder="Username" autofocus="autofocus">
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label> <input
@@ -36,7 +36,10 @@
 				<p>Back to <a href="index.jsp">start!</a></p>
 			</form>
 		</div>
+	
 	</div>
+	<jsp:include page="includes/footer.jsp"></jsp:include>
+	
 
 </body>
 </html>

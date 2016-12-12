@@ -1,4 +1,4 @@
-<div class="footer text-center">
+<div class="footer">
 	<p>
 		Designed by: <span>Dejan Mladjenovic</span>
 	</p>

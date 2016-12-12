@@ -16,7 +16,7 @@
 		
 		<jsp:include page="includes/header.jsp"></jsp:include>
 		
-		<div class="button text-right font-effect-outline">
+		<div class="menu text-right font-effect-outline">
 			<a href="register.jsp" id="register" class="btn btn-primary">Register</a>
 			<a href="login.jsp" id="login" class="btn btn-primary">Login</a>
 		</div>
@@ -27,9 +27,9 @@
 			<p>Manage your contacts as free as you want.</p>
 		</div>
 		
-		<jsp:include page="includes/footer.jsp"></jsp:include>
 		
 	</div>
+	<jsp:include page="includes/footer.jsp"></jsp:include>
 	
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

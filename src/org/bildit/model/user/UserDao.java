@@ -22,7 +22,7 @@ public class UserDao {
 			session.getTransaction().commit();
 			return true;
 		} catch (HibernateException he) {
-			System.out.println("Error");
+			System.out.println("Error create user");
 			session.getTransaction().rollback();
 			return false;
 		} finally {
@@ -42,7 +42,7 @@ public class UserDao {
 			session.getTransaction().commit();
 			return  user;
 		} catch (HibernateException he) {
-			System.out.println("Error");
+			System.out.println("Error read user");
 			session.getTransaction().rollback();
 			return null;
 		} finally {
@@ -62,7 +62,7 @@ public class UserDao {
 			session.getTransaction().commit();
 			return true;
 		} catch (HibernateException he) {
-			System.out.println("Error");
+			System.out.println("Error update user");
 			session.getTransaction().rollback();
 			return false;
 		} finally {

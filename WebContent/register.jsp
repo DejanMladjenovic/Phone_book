@@ -23,7 +23,7 @@
 				<div class="form-group">
 					<label for="username">Username</label> <input
 						type="text" pattern="[A-Za-z]{3,}" title="Only letters. Min 3 characters" class="form-control" name="username"
-						placeholder="Username" required>
+						placeholder="Username" autofocus="autofocus" required>
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label> <input
@@ -41,6 +41,7 @@
 			</form>
 		</div>
 	</div>
+	<jsp:include page="includes/footer.jsp"></jsp:include>
 
 </body>
 </html>

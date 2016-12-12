@@ -30,7 +30,12 @@ public class RegisterServlet extends HttpServlet {
 			request.setAttribute("screen", "Registration successful!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		} else {
-			request.setAttribute("screen", "Username already exists!");			
+			user = userDao.readUser(username);
+			if(user != null) {
+				request.setAttribute("screen", "Username already exists!");			
+			} else {
+				request.setAttribute("screen", "Email already used!");			
+			}
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}
 	}
