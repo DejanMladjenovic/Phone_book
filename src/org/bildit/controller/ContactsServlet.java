@@ -19,9 +19,11 @@ public class ContactsServlet extends HttpServlet {
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		User user = (User) request.getSession().getAttribute("user");
+
 		List<Contact> contacts = new ArrayList<>();
 		ContactDao contactDao = new ContactDao();
-		contacts = contactDao.readAll();
+		contacts = contactDao.readAll(user.getId());
 		
 		request.getSession().setAttribute("contacts", contacts);
 	}

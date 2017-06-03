@@ -24,11 +24,13 @@ public class SearchServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	
+		User user = (User) request.getSession().getAttribute("user");
+	
 		String match = request.getParameter("match");
 		List<Contact> contacts = new ArrayList<>();
 		ContactDao contactDao = new ContactDao();
-		contacts = contactDao.readMatchedContacts(match);
+		contacts = contactDao.readMatchedContacts(match, user.getId());
 		
 		if (contacts.isEmpty()) {
 			request.setAttribute("screen", "No contacts!");

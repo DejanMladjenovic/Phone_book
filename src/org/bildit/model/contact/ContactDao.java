@@ -33,12 +33,13 @@ public class ContactDao {
 		}
 	}
 	
-	public List<Contact> readAll () {
+	public List<Contact> readAll (int userId) {
 		List<Contact> contacts = new ArrayList<>();
 		session = sessionFactory.openSession();
 		try{
 			session.beginTransaction();
-			Query query = session.createQuery("from Contact");
+			Query query = session.createQuery("from Contact where userId=:userId").setParameter("userId",
+					userId);
 			contacts = query.list();
 			session.getTransaction().commit();
 		} catch (HibernateException he) {
@@ -50,12 +51,14 @@ public class ContactDao {
 		return contacts;
 	}
 	
-	public List<Contact> readMatchedContacts (String match) {
+	public List<Contact> readMatchedContacts (String match, int userId) {
 		List<Contact> contacts = new ArrayList<>();
 		session = sessionFactory.openSession();
 		try{
 			session.beginTransaction();
-			Criteria criteria = session.createCriteria(Contact.class)
+			Criteria criteria = session
+					.createCriteria(Contact.class)
+					.add(Restrictions.eq("userId", userId))	
 					.add(Restrictions.or(
 							Restrictions.ilike("firstName", '%' + match + '%'),
 							Restrictions.ilike("lastName", '%' + match + '%')));
